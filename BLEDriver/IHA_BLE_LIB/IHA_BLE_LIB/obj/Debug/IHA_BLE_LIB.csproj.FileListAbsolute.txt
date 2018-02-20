@@ -1,0 +1,12 @@
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.csproj.CoreCompileInputs.cache
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\IHA_BLE_LIB.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\IHA_BLE_LIB.pdb
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\Windows.Foundation.FoundationContract.winmd
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\Windows.Foundation.UniversalApiContract.winmd
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\Windows.WinMD
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.xml
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.xml
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.pdb
