@@ -141,10 +141,22 @@ void Bleuart_RX_Callback(void)
   
   if (fullRequestMessage = "DATA")
   {
-    String testdata = String((measurementData[dataToSend]), 7);
-    char copy[sizeof(testdata)];
-    testdata.toCharArray(copy, sizeof(testdata));
-    Serial.println(testdata);
+    // Send 2 data points at the time isntead of 1.
+    
+    String dataFirst;
+    int arraySize = 0;
+    if(dataToSend < 2000)
+    {    
+      dataFirst = String((measurementData[dataToSend*3]), 4) + ";" + String((measurementData[dataToSend*3+1]), 4) + ";" + String((measurementData[dataToSend*3+2]), 4);
+      arraySize = 20;
+    } else {
+       dataFirst = String((measurementData[dataToSend*3]), 4);
+       arraySize = sizeof(dataFirst);
+    }
+
+    char copy[arraySize];
+    dataFirst.toCharArray(copy, arraySize);
+    Serial.println(copy);
     bleuart.write(copy);
     dataToSend++;      
   }
@@ -186,3 +198,4 @@ String GetMAC()
   Serial.println(MAC);
   return MAC;
 }
+

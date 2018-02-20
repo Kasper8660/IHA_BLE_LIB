@@ -15,12 +15,7 @@ namespace ConsoleApp2
 
             Thread.Sleep(2000);
 
-            var result = ble.ReadSamples(100);
-
-            var result2 = ble.ReadSamples(200);
-            
-            // Should the driver handle how much data it has or should the MC handle how much data to send?
-            
+            var result = ble.ReadSamples(2000);
             
             Console.ReadLine();
             ble.Dispose();

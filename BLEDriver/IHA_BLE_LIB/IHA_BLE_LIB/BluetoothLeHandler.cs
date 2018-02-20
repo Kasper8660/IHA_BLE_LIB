@@ -110,6 +110,7 @@ namespace IHA_BLE_LIB
         /// </summary>
         public void Dispose()
         {
+            _service.Dispose();
             _currentDevice.Dispose();
             _currentDevice = null;
             try
@@ -132,7 +133,6 @@ namespace IHA_BLE_LIB
             List<double> samples = new List<double>();
             // Sending command 0x14 which indicates the following number is the amount of samples.
             WriteData("0x14" + amountOfSamples);
-            //Thread.Sleep(2000);
             // While loop that keeps reading data untill the amountOfSamples has been reached.
             while (samples.Count < amountOfSamples)
             {
@@ -142,9 +142,18 @@ namespace IHA_BLE_LIB
                 if (result != null)
                 {
                     var resultInString = System.Text.Encoding.Default.GetString(result);
-
-                    samples.Add(double.Parse(resultInString, System.Globalization.CultureInfo.InvariantCulture));
-                    Console.WriteLine(System.Text.Encoding.Default.GetString(result));
+                    if (resultInString.Contains(";"))
+                    {
+                        var res = resultInString.Split(';');
+                        foreach (var value in res)
+                        {
+                            samples.Add(double.Parse(value, System.Globalization.CultureInfo.InvariantCulture));
+                        }
+                    }
+                    else
+                    {
+                        samples.Add(double.Parse(resultInString, System.Globalization.CultureInfo.InvariantCulture));
+                    }
                 }
             }
 
