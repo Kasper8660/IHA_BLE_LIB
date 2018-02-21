@@ -20,17 +20,15 @@ BLEUart bleuart;
 // float mv_per_lsb = 3600.0F / 256.0F; // 8-bit
 // float mv_per_lsb = 3600.0F / 1024.0F; // 10-bit ADC with 3.6V input range
 // float mv_per_lsb = 3600.0F / 4096.0F; // 12-bit
- float mv_per_lsb = 3600.0F / 16384.0F; // 14-bit
+float mv_per_lsb = 3600.0F / 16384.0F; // 14-bit
 
 String fullRequestMessage;
 int delayTime;
-String test;
 int counter;
-float analogData;
-float measurementData[2000];
 int amountOfSamples;
 int dataToSend = 0;
-int dataIndexCounter;
+float analogData;
+float measurementData[2000];
 boolean beginSendSeqence = false;
 
 void setup() {

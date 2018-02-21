@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using IHA_BLE_LIB;
 
@@ -14,11 +15,24 @@ namespace ConsoleApp2
             Console.WriteLine("Connected");
 
             Thread.Sleep(2000);
+            /*
+            List<double> result = new List<double>();
 
-            var result = ble.ReadSamples(2000);
-            
-            Console.ReadLine();
+            for (int i = 0; i < 3; i++)
+            {
+               var resultLoop = ble.ReadSamples(2000);
+               foreach (var v in resultLoop)
+               {
+                    result.Add(v);
+               }
+            }
+            */
+
+            var resultLoop = ble.ReadSamples(200);
+
+            Console.WriteLine("Done");
             ble.Dispose();
+            Console.ReadLine();
         }
     }
 }

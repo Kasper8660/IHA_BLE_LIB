@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.Devices.Bluetooth;
 using Windows.Devices.Bluetooth.Advertisement;
@@ -98,11 +99,11 @@ namespace IHA_BLE_LIB
             if (amountOfSamples > 2000)
                 amountOfSamples = 2000;
 
-            var test = ReadXData(amountOfSamples);
+            var data = ReadXData(amountOfSamples);
             _notDone = false;
             while (!_notDone)
             { }
-            return test.Result;
+            return data.Result;
         }
 
         /// <summary>
@@ -110,9 +111,14 @@ namespace IHA_BLE_LIB
         /// </summary>
         public void Dispose()
         {
+            _currentDevice.DeviceInformation.Pairing.UnpairAsync();
+            Thread.Sleep(3000);
+            _rxCharacteristic = null;
+            _txCharacteristic = null;
             _service.Dispose();
             _currentDevice.Dispose();
             _currentDevice = null;
+            _service = null;
             try
             {
                 GC.Collect();
@@ -144,8 +150,8 @@ namespace IHA_BLE_LIB
                     var resultInString = System.Text.Encoding.Default.GetString(result);
                     if (resultInString.Contains(";"))
                     {
-                        var res = resultInString.Split(';');
-                        foreach (var value in res)
+                        var resultInByteArray = resultInString.Split(';');
+                        foreach (var value in resultInByteArray)
                         {
                             samples.Add(double.Parse(value, System.Globalization.CultureInfo.InvariantCulture));
                         }
@@ -175,7 +181,7 @@ namespace IHA_BLE_LIB
             // 0x13 command indiates that the following number is the amount of ms the loop should run in.
             WriteData("0x13" + samplerateInMs);
         }
-
+        
         /// <summary>
         /// Waits for data and reads it. When data has been read it will return the data.
         /// </summary>
@@ -234,8 +240,6 @@ namespace IHA_BLE_LIB
 
             if (macAddress == _macAddress)
             {
-
-
                 Debug.WriteLine($"---------------------- {btAdv.Advertisement.LocalName} ----------------------");
                 Debug.WriteLine($"Advertisement Data: {btAdv.Advertisement.ServiceUuids.Count}");
                 var device = await BluetoothLEDevice.FromBluetoothAddressAsync(btAdv.BluetoothAddress);
