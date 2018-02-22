@@ -67,9 +67,9 @@ void loop()
         Serial.println(String(measurementDataDouble));
         measurementData[counter] = measurementDataDouble;
         counter++;        
-        }   
-      }
-    }
+       }   
+     }
+}
   
 
 void SetupCallbacks()
@@ -152,11 +152,12 @@ void Bleuart_RX_Callback(void)
        arraySize = sizeof(dataFirst);
     }
 
+    // Convert string to char array to send over BLE.
     char copy[arraySize];
     dataFirst.toCharArray(copy, arraySize);
     Serial.println(copy);
-    bleuart.write(copy);
     dataToSend++;      
+    bleuart.write(copy);
   }
 }
 

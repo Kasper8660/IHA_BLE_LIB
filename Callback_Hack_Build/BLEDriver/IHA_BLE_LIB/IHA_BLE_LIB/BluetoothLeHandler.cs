@@ -264,6 +264,7 @@ namespace IHA_BLE_LIB_CALLBACK
 
         /// <summary>
         /// This is the callback method that will never be executed since the callback does not work on the current windows version.
+        /// For each execution a buffer with max size 20 is being read. Those are being sent 4 at the same from the MC, which means we send 4 DATA request before a new one will be send.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -291,7 +292,6 @@ namespace IHA_BLE_LIB_CALLBACK
                         }
                         else
                         {
-
                             if (_previousData != "")
                             {
                                 _previousData += value;
@@ -314,7 +314,7 @@ namespace IHA_BLE_LIB_CALLBACK
                     samples.Add(double.Parse(resultInString, System.Globalization.CultureInfo.InvariantCulture));
                 }
             }
-            WriteData("Data");
+            WriteData("DATA");
         }
 
         /// <summary>

@@ -73,9 +73,9 @@ void loop()
           bleuart.write("Test");
         }
         counter++;        
-        }   
-      }
-    }
+       }   
+     }
+}
   
 
 void SetupCallbacks()
@@ -148,11 +148,13 @@ void Bleuart_RX_Callback(void)
   
   if (fullRequestMessage = "DATA")
   {   
+    // Return if it shouldnt send any more data
     if(stopSending)
     {
       return;
     }
-    // Send 2 data points at the time isntead of 1.
+
+    // Check if all 4 packets has been send, since each tranmission from MC is 4 packets on the C# driver. Which means we get DATA request 4 times before sending new data.
     if(dataRequestCounter < 3)
     {
       dataRequestCounter++;
@@ -164,11 +166,12 @@ void Bleuart_RX_Callback(void)
     {        
         dataFirst = String((measurementData[dataToSend*12]), 4) + ";" + String((measurementData[dataToSend*12+1]), 4) + ";" + String((measurementData[dataToSend*12+2]), 4)
         + ";" + String((measurementData[dataToSend*12+3]), 4) + ";" + String((measurementData[dataToSend*12+4]), 4) + ";" + String((measurementData[dataToSend*12+5]), 4)
-        + ";" + String((measurementData[dataToSend*12+6]), 4) + ";" + String((measurementData[dataToSend*12+7]), 4) + ";" + String((measurementData[dataToSend*12+7]), 4)
-        + ";" + String((measurementData[dataToSend*12+8]), 4) + ";" + String((measurementData[dataToSend*12+9]), 4) + ";" + String((measurementData[dataToSend*12+10]), 4);
+        + ";" + String((measurementData[dataToSend*12+6]), 4) + ";" + String((measurementData[dataToSend*12+7]), 4) + ";" + String((measurementData[dataToSend*12+8]), 4)
+        + ";" + String((measurementData[dataToSend*12+9]), 4) + ";" + String((measurementData[dataToSend*12+10]), 4) + ";" + String((measurementData[dataToSend*12+11]), 4);
         arraySize = dataFirst.length() + 1;      
     }
 
+    //Copy the string to an char array, which can be send over ble.
     char copy[arraySize];
     dataFirst.toCharArray(copy, arraySize);
     Serial.println(copy);
