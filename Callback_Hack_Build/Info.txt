@@ -1,0 +1,2 @@
+DLL is made from last manuel build from the driver.
+If changes has been made - remmemeber to update this DLL.
