@@ -290,22 +290,6 @@ namespace IHA_BLE_LIB
                                     _txCharacteristic = chara;
                                 }
                             }
-
-                            // Below code is enableing the data callback which does not work at the current windows version.
-                            /*
-                            if (_rxCharacteristic != null)
-                            {
-                                // Register the event handler for receiving notifications
-                                _rxCharacteristic.ValueChanged += Characteristic_ValueChanged;
-
-                                // In order to avoid unnecessary communication with the device, determine if the device is already 
-                                // correctly configured to send notifications.
-                                // By default ReadClientCharacteristicConfigurationDescriptorAsync will attempt to get the current
-                                // value from the system cache and communication with the device is not typically required.
-                                var currentDescriptorValue = await _rxCharacteristic.ReadClientCharacteristicConfigurationDescriptorAsync();
-                                var status = await _rxCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(GattClientCharacteristicConfigurationDescriptorValue.Notify);
-                            }
-                            */
                         }
                     }
 
@@ -317,39 +301,7 @@ namespace IHA_BLE_LIB
                 }
             }
             Console.WriteLine();
-        }
-
-        /// <summary>
-        /// This is the callback method that will never be executed since the callback does not work on the current windows version.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        /// 
-        void Characteristic_ValueChanged(GattCharacteristic sender, GattValueChangedEventArgs args)
-        {
-            Debug.WriteLine("Callback on data received!");
-            // An Indicate or Notify reported that the value has changed.
-            var reader = DataReader.FromBuffer(args.CharacteristicValue);
-            // Parse the data however required.
-            // The encoding and byte order need to match the settings of the writer 
-            // we previously used.
-            reader.UnicodeEncoding = UnicodeEncoding.Utf8;
-            reader.ByteOrder = ByteOrder.LittleEndian;
-
-            var receivedStrings = "";
-
-            // Keep reading until we consume the complete stream.
-            while (reader.UnconsumedBufferLength > 0)
-            {
-                // Note that the call to readString requires a length of "code units" 
-                // to read. This is the reason each string is preceded by its length 
-                // when "on the wire".
-                uint bytesToRead = reader.ReadUInt32();
-                receivedStrings += reader.ReadString(bytesToRead) + "\n";
-            }
-            reader.Dispose();
-            Console.WriteLine(receivedStrings);
-        }
+        }      
 
         /// <summary>
         /// This method writes data to microcontroller over bluetooth low energy protocol.

@@ -29,3 +29,12 @@ C:\Users\kaspe\Desktop\IHA_BLE_LIB\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\S
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.csprojResolveAssemblyReference.cache
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.dll
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.pdb
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\IHA_BLE_LIB.dll
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\IHA_BLE_LIB.pdb
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.dll
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.dll
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.xml
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.xml
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.csprojResolveAssemblyReference.cache
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.dll
+C:\Users\kaspe\Desktop\IHA_BLE_LIB\Safe_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.pdb
