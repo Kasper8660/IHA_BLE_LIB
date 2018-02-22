@@ -23,6 +23,8 @@ namespace IHA_BLE_LIB_CALLBACK
         private int _amountOfSamples;
         private BluetoothLEDevice _currentDevice;
         private readonly double _sampleRate;
+        private bool _notDone;
+        private List<double> _samples = new List<double>();
 
         private GattDeviceService _service;
         private GattCharacteristic _txCharacteristic;
@@ -34,8 +36,6 @@ namespace IHA_BLE_LIB_CALLBACK
         private static readonly Guid RxUuid = new Guid("6E400003-B5A3-F393-E0A9-E50E24DCCA9E");
 
         private bool IsConnected { get; set; }
-        private bool _notDone;
-        private List<double> samples = new List<double>();
 
         /// <summary>
         /// Constructor to initialize the samplerate.
@@ -101,7 +101,7 @@ namespace IHA_BLE_LIB_CALLBACK
         /// <returns>List of data samples.</returns>
         public List<double> ReadSamples(int amountOfSamples)
         {
-            samples = new List<double>();
+            _samples = new List<double>();
             _amountOfSamples = amountOfSamples;
             if (amountOfSamples > 2000)
                 amountOfSamples = 2000;
@@ -110,7 +110,7 @@ namespace IHA_BLE_LIB_CALLBACK
             _notDone = false;
             while (!_notDone)
             { }
-            return data.Result;
+            return data;
         }
 
         /// <summary>
@@ -141,21 +141,21 @@ namespace IHA_BLE_LIB_CALLBACK
         /// </summary>
         /// <param name="amountOfSamples">Amount of data to read</param>
         /// <returns>List with data</returns>
-        private async Task<List<double>> ReadXData(int amountOfSamples)
+        private List<double> ReadXData(int amountOfSamples)
         {
             // Sending command 0x14 which indicates the following number is the amount of samples.
             WriteData("0x14" + amountOfSamples);
             // While loop that keeps reading data untill the amountOfSamples has been reached.
             Thread.Sleep(2000);
 
-            while (samples.Count < amountOfSamples)
+            while (_samples.Count < amountOfSamples)
             {
             }
 
             // Send message that we are done reading data
             WriteData("0x12");
             _notDone = true;
-            return samples;
+            return _samples;
         }
 
         /// <summary>
@@ -247,8 +247,11 @@ namespace IHA_BLE_LIB_CALLBACK
                                     _txCharacteristic = chara;
                                 }
                             }
-                            _rxCharacteristic.ValueChanged += Characteristic_ValueChanged;
-                            var status = await _rxCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(GattClientCharacteristicConfigurationDescriptorValue.Notify);
+                            if (_rxCharacteristic != null)
+                            {
+                                _rxCharacteristic.ValueChanged += Characteristic_ValueChanged;
+                                var status = await _rxCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(GattClientCharacteristicConfigurationDescriptorValue.Notify);
+                            }
                         }
                     }
 
@@ -286,23 +289,21 @@ namespace IHA_BLE_LIB_CALLBACK
                 {
                     if (value.Length == 6)
                     {
-                        if (samples.Count < _amountOfSamples)
+                        if (_samples.Count < _amountOfSamples)
                         {
-                            samples.Add(double.Parse(value, System.Globalization.CultureInfo.InvariantCulture));
+                            _samples.Add(double.Parse(value, System.Globalization.CultureInfo.InvariantCulture));
                         }
                     } else {
                         if (_previousData != "")
                         {
                             _previousData += value;
-                            if (samples.Count < _amountOfSamples)
+                            if (_samples.Count < _amountOfSamples)
                             {
-                                samples.Add(double.Parse(_previousData,
+                                _samples.Add(double.Parse(_previousData,
                                     System.Globalization.CultureInfo.InvariantCulture));
                             }
                             _previousData = "";
-                        }
-                        else
-                        {
+                        } else {
                             _previousData = value;
                         }
                     }
@@ -310,7 +311,7 @@ namespace IHA_BLE_LIB_CALLBACK
             } else {
                 if(resultInString.Contains("."))
                 {
-                    samples.Add(double.Parse(resultInString, System.Globalization.CultureInfo.InvariantCulture));
+                    _samples.Add(double.Parse(resultInString, System.Globalization.CultureInfo.InvariantCulture));
                 }
             }
             WriteData("DATA");
