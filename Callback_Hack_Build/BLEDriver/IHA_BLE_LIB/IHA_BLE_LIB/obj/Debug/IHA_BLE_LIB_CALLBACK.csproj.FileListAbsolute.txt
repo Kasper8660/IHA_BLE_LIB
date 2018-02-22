@@ -7,3 +7,14 @@ C:\Users\kaspe\Desktop\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.dll
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.pdb
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB_CALLBACK.csprojResolveAssemblyReference.cache
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\IHA_BLE_LIB.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\IHA_BLE_LIB.pdb
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\Windows.WinMD
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.xml
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.xml
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB_CALLBACK.csprojResolveAssemblyReference.cache
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB_CALLBACK.csproj.CoreCompileInputs.cache
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\BLEDriver\IHA_BLE_LIB\IHA_BLE_LIB\obj\Debug\IHA_BLE_LIB.pdb

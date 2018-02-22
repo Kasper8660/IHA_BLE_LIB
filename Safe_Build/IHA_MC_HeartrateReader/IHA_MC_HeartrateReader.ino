@@ -61,7 +61,7 @@ void loop()
     {
       if(counter < 2000)
       {
-        analogData = analogRead(A5);
+        analogData = analogRead(A0);
         float measurementDataDouble = (float)analogData * mv_per_lsb;
         measurementDataDouble = measurementDataDouble/1000;
         Serial.println(String(measurementDataDouble));

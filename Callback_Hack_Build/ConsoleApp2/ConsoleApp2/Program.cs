@@ -27,7 +27,7 @@ namespace ConsoleApp2
             }
             */
 
-            var resultLoop = ble.ReadSamples(200);
+            var resultLoop = ble.ReadSamples(2000);
 
             Console.WriteLine("Done");
             ble.Dispose();

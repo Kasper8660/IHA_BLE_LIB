@@ -1,0 +1,7 @@
+To setup the Arduino with Bluefruit nRF52832 it is needed to have the right board and library into the Arduino IDE.
+
+This is done by this link.
+
+https://github.com/adafruit/Adafruit_nRF52_Arduino
+
+The link contains a guide for what to do. First the board must be added with the url, and after that the Bluefruit library is needed.

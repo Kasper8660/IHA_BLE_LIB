@@ -61,16 +61,16 @@ void loop()
 
     if(beginSendSeqence)
     {
-      if(counter < 2000)
+      if(counter < 2080)
       {
-        analogData = analogRead(A5);
+        analogData = analogRead(A0);
         float measurementDataDouble = (float)analogData * mv_per_lsb;
         measurementDataDouble = measurementDataDouble/1000;
         Serial.println(String(measurementDataDouble));
         measurementData[counter] = measurementDataDouble;
         if(counter > 80 && counter < 85)
         {
-          bleuart.write("Test");
+          bleuart.write("DATA");
         }
         counter++;        
        }   
@@ -162,22 +162,23 @@ void Bleuart_RX_Callback(void)
     }
     String dataFirst;
     int arraySize = 0;
-    if(dataToSend*12 < 2000)
+    Serial.println(dataToSend);
+    if(dataToSend < 2080)
     {        
-        dataFirst = String((measurementData[dataToSend*12]), 4) + ";" + String((measurementData[dataToSend*12+1]), 4) + ";" + String((measurementData[dataToSend*12+2]), 4)
-        + ";" + String((measurementData[dataToSend*12+3]), 4) + ";" + String((measurementData[dataToSend*12+4]), 4) + ";" + String((measurementData[dataToSend*12+5]), 4)
-        + ";" + String((measurementData[dataToSend*12+6]), 4) + ";" + String((measurementData[dataToSend*12+7]), 4) + ";" + String((measurementData[dataToSend*12+8]), 4)
-        + ";" + String((measurementData[dataToSend*12+9]), 4) + ";" + String((measurementData[dataToSend*12+10]), 4) + ";" + String((measurementData[dataToSend*12+11]), 4);
-        arraySize = dataFirst.length() + 1;      
-    }
+        dataFirst = String((measurementData[dataToSend]), 4) + ";" + String((measurementData[dataToSend+1]), 4) + ";" + String((measurementData[dataToSend+2]), 4)
+        + ";" + String((measurementData[dataToSend+3]), 4) + ";" + String((measurementData[dataToSend+4]), 4) + ";" + String((measurementData[dataToSend+5]), 4)
+        + ";" + String((measurementData[dataToSend+6]), 4) + ";" + String((measurementData[dataToSend+7]), 4) + ";" + String((measurementData[dataToSend+8]), 4)
+        + ";" + String((measurementData[dataToSend+9]), 4) + ";" + String((measurementData[dataToSend+10]), 4);
+        arraySize = dataFirst.length() + 1;                
 
-    //Copy the string to an char array, which can be send over ble.
-    char copy[arraySize];
-    dataFirst.toCharArray(copy, arraySize);
-    Serial.println(copy);
-    dataRequestCounter = 0;
-    dataToSend++;      
-    bleuart.write(copy);    
+        //Copy the string to an char array, which can be send over ble.      
+        char copy[arraySize];
+        dataFirst.toCharArray(copy, arraySize);
+        Serial.println(copy);
+        dataRequestCounter = 0;
+        dataToSend += 11;              
+        bleuart.write(copy); 
+    }         
   }
 }
 

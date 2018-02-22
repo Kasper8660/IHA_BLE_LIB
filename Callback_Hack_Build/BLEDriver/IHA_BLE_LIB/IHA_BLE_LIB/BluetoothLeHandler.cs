@@ -19,7 +19,7 @@ namespace IHA_BLE_LIB_CALLBACK
     public class BluetoothLeHandler
     {
         private string _macAddress;
-        private string _previousData;
+        private string _previousData = "";
         private int _amountOfSamples;
         private BluetoothLEDevice _currentDevice;
         private readonly double _sampleRate;
@@ -290,23 +290,22 @@ namespace IHA_BLE_LIB_CALLBACK
                         {
                             samples.Add(double.Parse(value, System.Globalization.CultureInfo.InvariantCulture));
                         }
+                    } else {
+                        if (_previousData != "")
+                        {
+                            _previousData += value;
+                            if (samples.Count < _amountOfSamples)
+                            {
+                                samples.Add(double.Parse(_previousData,
+                                    System.Globalization.CultureInfo.InvariantCulture));
+                            }
+                            _previousData = "";
+                        }
                         else
                         {
-                            if (_previousData != "")
-                            {
-                                _previousData += value;
-                                if (samples.Count < _amountOfSamples)
-                                {
-                                    samples.Add(double.Parse(_previousData, System.Globalization.CultureInfo.InvariantCulture));
-                                }
-                                _previousData = "";
-                            }
-                            else
-                            {
-                                _previousData = value;
-                            }
+                            _previousData = value;
                         }
-                    }                    
+                    }
                 }
             } else {
                 if(resultInString.Contains("."))
@@ -329,9 +328,12 @@ namespace IHA_BLE_LIB_CALLBACK
             var writer = new DataWriter();
             // WriteByte used for simplicity. Other commmon functions - WriteInt16 and WriteSingle
             writer.WriteString(msg);
+            GattCommunicationStatus status = GattCommunicationStatus.Unreachable;
 
-            GattCommunicationStatus test = await _txCharacteristic.WriteValueAsync(writer.DetachBuffer());
-            if (test == GattCommunicationStatus.Success)
+            if (_txCharacteristic != null)
+                status = await _txCharacteristic.WriteValueAsync(writer.DetachBuffer());
+
+            if (status == GattCommunicationStatus.Success)
             {
                 // Successfully wrote to device
             }

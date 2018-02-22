@@ -49,3 +49,17 @@ C:\Users\kaspe\Desktop\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\b
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\IHA_BLE_LIB.pdb
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\System.Runtime.WindowsRuntime.xml
 C:\Users\kaspe\Desktop\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.xml
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\IHA_BLE_LIB.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\System.Runtime.WindowsRuntime.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.dll
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\Windows.WinMD
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\IHA_BLE_LIB.pdb
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\System.Runtime.WindowsRuntime.xml
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\bin\Debug\System.Runtime.WindowsRuntime.UI.Xaml.xml
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csprojResolveAssemblyReference.cache
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\Kasper\Desktop\IHAHeartmeasurement\IHA_BLE_LIB\Callback_Hack_Build\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
